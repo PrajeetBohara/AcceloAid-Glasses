@@ -1,0 +1,33 @@
+#include <Mouse.h>
+
+const int IRsensorPin = 2; // IR sensor output to Digital Pin 2
+bool previousState = LOW;
+
+void setup() {
+  Serial.begin(9600);  
+  while (!Serial); 
+  
+  pinMode(IRsensorPin, INPUT);
+  
+  Mouse.begin();
+  
+  Serial.println("Looking for movement");
+}
+
+void loop() {
+  int sensorState = digitalRead(IRsensorPin);
+  
+  Serial.print("Sensor state: "); //Prints current sensor state whether 0 or 1. For IR Obstacle Avoid Module, 1 is during not detecting any obstacle
+  Serial.println(sensorState);
+
+  // Detect cheek movement by checking if an object is detected
+  if (sensorState == HIGH && previousState == LOW) {
+    // Cheek movement detected, simulate mouse click
+    Mouse.click();
+    Serial.println("Mouse clicked!");
+    delay(200); // Debouncing delay to avoid multiple clicks
+  }
+
+  previousState = sensorState;
+  delay(100);  // Add a small delay for stability
+}
