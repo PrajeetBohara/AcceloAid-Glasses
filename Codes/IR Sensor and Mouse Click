@@ -1,3 +1,4 @@
+//IEEE and ebcore.io
 #include <Mouse.h>
 
 const int IRsensorPin = 2; // IR sensor output to Digital Pin 2
