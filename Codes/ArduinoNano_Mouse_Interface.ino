@@ -1,5 +1,5 @@
 // Date: 09/28/2024
-// Name: ***Project Name Not Decided Yet***
+// Name: AcceloAid Glasses
 // Author: Institute of Electrical and Electronics Engineers (IEEE) at McNeese
 // Source Code and Libraries: Arduino Official Documentation, GitHub repositories
 // Modified by: Prajeet Bohara
